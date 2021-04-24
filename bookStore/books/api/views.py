@@ -30,6 +30,16 @@ def index(request):
     serializer=BookSerializer(instance=books,many=True)
     return Response(data=serializer.data,status=status.HTTP_200_OK)
 
+@api_view(["GET"])
+def show(request,id):
+    book=Book.objects.get(pk=id)
+    serializer=BookSerializer(instance=book)
+    return Response(data=serializer.data,status=status.HTTP_200_OK)
+    
+
+    
+
+
 
 @api_view(["POST"])
 def create(request):
