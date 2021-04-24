@@ -1,0 +1,14 @@
+{% extends "layout/main.html"%}
+{% block title %}
+<title>SHOW BOOK</title>
+{% endblock %}
+{% block body %}
+    <h1>bOOk StOre</h1>
+    
+    <h3>{{book.title}}</h3>
+    <p>{{book.content}}</p>
+    <a href="http://127.0.0.1:8000/books/">ALL BOOKS</a>
+    <a href="{% url 'edit' book.id%}">EDIT</a>
+    <a href="{% url 'delete' book.id%}">DELETE</a>
+    
+{% endblock %}

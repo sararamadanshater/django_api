@@ -1,0 +1,21 @@
+{% extends "layout/main.html"%}
+{% block title %}
+<title>BOOK STORE</title>
+{% endblock %}
+{% block body %}
+    <h1>bOOk StOre</h1>
+    {% if request.user.is_authenticated%}
+    <h3>welcome {{request.user}}</h3>
+
+    {% endif%}
+    <button class="btn btn-success"><a style="text-decoration: none;color: white;" href="{% url 'create' %}">Create</a></button>
+    {% for book in books%}
+    <h3>{{book.title}}</h3>
+    <p>{{book.content}}</p>
+    <a href="{% url 'show' book.id%}">SHOW</a>
+    <a href="{% url 'edit' book.id%}">EDIT</a>
+    <a href="{% url 'delete' book.id%}">DELETE</a>
+    {%endfor%}
+{% endblock %}
+
+
