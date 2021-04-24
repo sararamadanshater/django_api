@@ -56,12 +56,12 @@ MIDDLEWARE = [
 ]
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication',
         
-    ]
-}
+#     ]
+# }
 
 ROOT_URLCONF = 'bookStore.urls'
 
